@@ -1667,26 +1667,25 @@ window.addEventListener('load', syncFrontend);
 // Masonry size classes - pattern repeats every 7 cards
 (function() {
   const pattern = ['card-featured','card-standard','card-tall','card-standard','card-wide','card-standard','card-standard'];
+  var applied = false;
   function applyMasonry() {
-    document.querySelectorAll('.product-grid').forEach(grid => {
-      const cards = grid.querySelectorAll('.product-card, a.product-card');
-      cards.forEach((card, i) => {
-        card.classList.remove('card-featured','card-wide','card-tall','card-standard');
+    if (applied) return;
+    applied = true;
+    document.querySelectorAll('.product-grid').forEach(function(grid) {
+      var cards = grid.querySelectorAll('.product-card, a.product-card');
+      cards.forEach(function(card, i) {
         card.classList.add(pattern[i % pattern.length]);
       });
     });
   }
-  // run on load and after filter changes
+  // פשוט - רץ פעם אחת בטעינה
   window.addEventListener('load', applyMasonry);
+  // ואחרי לחיצה על filter
   document.addEventListener('click', function(e) {
-    if (e.target.closest('.filter-tab')) setTimeout(applyMasonry, 50);
-  });
-  // also observe DOM changes (filter show/hide)
-  const obs = new MutationObserver(applyMasonry);
-  document.addEventListener('DOMContentLoaded', () => {
-    const lib = document.querySelector('.library');
-    if (lib) obs.observe(lib, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
-    applyMasonry();
+    if (e.target.closest('.filter-tab')) {
+      applied = false;
+      setTimeout(applyMasonry, 100);
+    }
   });
 })();
 </script></body>
