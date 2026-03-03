@@ -628,18 +628,53 @@ body::after {
   .category-section[data-section="fruits"] { margin-left: -5%; margin-right: -5%; padding-left: 5%; padding-right: 5%; }
 }
 @media (max-width: 800px) {
-  .masthead { padding: 14px 24px; }
-  .hero { padding: 52px 24px 36px; }
-  .filter-bar { justify-content: flex-start; top: 45px; }
-  .hero-stats { gap: 20px; }
-  .ft { flex-direction: column; gap: 14px; text-align: center; padding: 40px 24px; }
-  .product-card { padding: 2rem; }
+  /* MASTHEAD - שורה אחת, קומפקטי */
+  .masthead { padding: 10px 16px; }
+  .masthead-brand { font-size: 9px; letter-spacing: 0.2em; }
+  .masthead-meta { display: none; }
+  .masthead-admin { font-size: 9px; letter-spacing: 0.15em; }
+
+  /* HERO */
+  .hero { padding: 36px 16px 24px; }
+  .hero-stats { gap: 16px; }
+
+  /* FILTER TABS */
+  .filter-bar { justify-content: flex-start; top: 41px; padding: 0 16px; gap: 0; }
+  .filter-tab { font-size: 11px; padding: 10px 14px; }
+
+  /* CATEGORY HEADER */
+  .category-header { flex-wrap: wrap; gap: 0.5rem; padding-bottom: 0.8rem; margin-bottom: 2rem; overflow: hidden; }
+  .category-title { font-size: 42px !important; line-height: 1; }
+  .category-en { font-size: 9px; }
+  .category-count { font-size: 9px; }
+
+  /* SECTIONS - פחות ריווח */
+  .page-index .category-section { margin: 4rem 0 6rem !important; }
+
+  /* CARDS */
+  .product-card { padding: 1.5rem; }
+  .ft { flex-direction: column; gap: 14px; text-align: center; padding: 40px 16px; }
 }
 @media (max-width: 540px) {
   .product-grid,
   .category-section[data-section="seeds"] .product-grid { grid-template-columns: 1fr; }
-  .hero-h1 { font-size: 52px; }
-  .category-section[data-section="seeds"] .card-title-he { font-size: 34px; }
+  .hero-h1 { font-size: 44px; }
+  .category-section[data-section="seeds"] .card-title-he { font-size: 30px; }
+
+  /* masthead - רק brand ואדמין */
+  .masthead { padding: 8px 14px; }
+  .masthead-brand { font-size: 8px; }
+
+  /* category header לא נחתך */
+  .category-header { padding-right: 0; }
+  .category-title { font-size: 36px !important; }
+
+  /* ריווח sections */
+  .page-index .category-section { margin: 3rem 0 4rem !important; }
+
+  /* card padding */
+  .product-card { padding: 1.2rem; }
+  .card-title-he { font-size: 32px !important; }
 }
 </style>
 </head>
