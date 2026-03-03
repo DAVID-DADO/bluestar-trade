@@ -748,13 +748,25 @@ body::before, body::after { display: none !important; }
 /* CARD IMAGE - מוגבל */
 .card-media { overflow: hidden !important; }
 .card-media img, .card-media video {
-    height: 115px !important;
+    height: 160px !important;
     width: 100% !important;
     object-fit: cover !important;
     filter: grayscale(15%) !important;
     transition: filter 0.3s ease !important;
     display: block !important;
 }
+/* card structure - image dominates */
+.product-card, a.product-card {
+    display: flex !important;
+    flex-direction: column !important;
+}
+.card-media {
+    flex-shrink: 0 !important;
+    margin: -10px -10px 8px -10px !important;
+    border-radius: 2px 2px 0 0 !important;
+    overflow: hidden !important;
+}
+.card-desc { -webkit-line-clamp: 1 !important; }
 .product-card:hover .card-media img,
 .product-card:hover .card-media video { filter: grayscale(0%) !important; }
 
