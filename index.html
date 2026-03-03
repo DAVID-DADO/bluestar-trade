@@ -676,7 +676,143 @@ body::after {
   .product-card { padding: 1.2rem; }
   .card-title-he { font-size: 32px !important; }
 }
-</style>
+
+/* ── INSTITUTIONAL REFINEMENT BY BLUE STAR ── */
+:root {
+    --archive-bg: #f8f7f2;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5e5e5e;
+    --accent: #8c7355;
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    --card-hover-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* GLOBAL OVERRIDE */
+body {
+    background-color: var(--archive-bg) !important;
+    background-image: none !important;
+    color: var(--text-primary) !important;
+    font-family: 'Assistant', sans-serif !important;
+}
+body::before, body::after { display: none !important; }
+
+/* MASTHEAD */
+.masthead {
+    background: rgba(248,247,242,0.95) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+.masthead-brand { color: var(--accent) !important; }
+.masthead-meta { color: var(--text-secondary) !important; }
+.masthead-admin { color: var(--text-secondary) !important; }
+
+/* HERO */
+.hero-h1 { color: var(--text-primary) !important; }
+.hero-sub { color: var(--text-secondary) !important; }
+.hero-stat-n { color: var(--text-primary) !important; }
+.hero-stat-l { color: var(--text-secondary) !important; }
+
+/* SEARCH */
+.search-wrap input {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.12) !important;
+    color: var(--text-primary) !important;
+}
+.search-wrap input::placeholder { color: #aaa !important; }
+
+/* FILTER TABS */
+.filter-bar {
+    background: rgba(248,247,242,0.95) !important;
+    border-color: rgba(0,0,0,0.06) !important;
+}
+.filter-tab { color: var(--text-secondary) !important; }
+.filter-tab.active { color: var(--accent) !important; border-bottom-color: var(--accent) !important; }
+.filter-count { background: rgba(140,115,85,0.12) !important; color: var(--accent) !important; }
+
+/* CATEGORY HEADER */
+.category-header { border-bottom-color: rgba(0,0,0,0.08) !important; }
+.category-title { color: var(--text-primary) !important; }
+.category-en { color: var(--text-secondary) !important; }
+.category-count { color: var(--text-secondary) !important; }
+
+/* PRODUCT GRID */
+.product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
+}
+
+/* CATEGORY SECTION */
+.category-section {
+    padding: 40px 0 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+.page-index .category-section {
+    margin: 4rem 0 !important;
+}
+
+/* PRODUCT CARD */
+.product-card, a.product-card {
+    background: #ffffff !important;
+    border: 0.5px solid rgba(0,0,0,0.08) !important;
+    border-radius: 2px !important;
+    padding: 15px !important;
+    box-shadow: var(--card-shadow) !important;
+}
+.product-card:hover, a.product-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--card-hover-shadow) !important;
+    border-color: var(--accent) !important;
+}
+
+/* CARD CONTENT */
+.card-title-he {
+    font-family: 'David Libre', serif !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    letter-spacing: -0.02em !important;
+}
+.card-latin {
+    font-family: 'Courier New', monospace !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    color: var(--accent) !important;
+    letter-spacing: 0.05em !important;
+}
+.card-desc { color: var(--text-secondary) !important; font-size: 0.9rem !important; line-height: 1.5 !important; }
+.card-meta-key { color: #999 !important; }
+.card-meta-val { color: var(--text-primary) !important; }
+.card-index { color: rgba(0,0,0,0.15) !important; }
+.card-arrow { color: var(--accent) !important; }
+
+/* IMAGE */
+.card-media img, .card-media video {
+    filter: grayscale(20%) !important;
+    transition: filter 0.3s ease !important;
+}
+.product-card:hover .card-media img,
+.product-card:hover .card-media video {
+    filter: grayscale(0%) !important;
+}
+
+/* FOOTER */
+.ft { 
+    background: #f0efe9 !important; 
+    border-top: 1px solid rgba(0,0,0,0.08) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* MARQUEE - hide on light */
+.marquee-container { display: none !important; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .product-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+    .page-index .category-section { margin: 2rem 0 !important; }
+}
+@media (max-width: 540px) {
+    .product-grid { grid-template-columns: 1fr !important; }
+    .card-title-he { font-size: 1.2rem !important; }
+}</style>
 </head>
 <body class="page-index">
 
